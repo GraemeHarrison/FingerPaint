@@ -27,24 +27,30 @@
 }
 - (IBAction)paintGesture:(UIPanGestureRecognizer *)sender {
     
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        [self.paintView storeArrays];
+        [self.paintView.fingerPath removeAllObjects];
+    } else {
+        CGPoint currentLocation = [sender locationInView:self.view];
+        [self.paintView addPositions:currentLocation];
+        [self.paintView setNeedsDisplay];
+    }
+}
+
+@end
+
+
 //    CGPoint startLocation = [sender locationOfTouch:1 inView:self.view];
 ////    CGFloat startX = startLocation.x;
 ////    CGFloat startY = startLocation.y;
 ////
-    CGPoint currentLocation = [sender locationInView:self.view];
 ////    CGFloat locationX = currentLocation.x;
 ////    CGFloat locationY = currentLocation.y;
-////    
+////
 ////    self.paintView.startX = startX;
 ////    self.paintView.startX = startY;
-////    
+////
 ////    self.paintView.fingerPathX = locationX;
 ////    self.paintView.fingerPathY = locationY;
 //    self.paintView.startPosition = startLocation;
-    [self.paintView addPositions:currentLocation];
-    
 //    self.paintView.fingerPosition = currentLocation;
-    [self.paintView setNeedsDisplay];
-}
-
-@end
