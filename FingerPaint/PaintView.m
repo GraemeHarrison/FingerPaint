@@ -16,12 +16,13 @@
     if (self) {
         _fingerPath = [[NSMutableArray alloc] init];
         _arrayOfPaths = [[NSMutableArray alloc]init];
+//        _pathColor = [UIColor blackColor];
     }
     return self;
 }
 
 - (void)drawRect:(CGRect)rect {
-    NSLog(@"finger position: %@", NSStringFromCGPoint(self.fingerPosition));
+//    NSLog(@"finger position: %@", NSStringFromCGPoint(self.fingerPosition));
     
     UIBezierPath *segmentPath = [[UIBezierPath alloc] init];
 
@@ -34,7 +35,7 @@
             [segmentPath addLineToPoint:points];
         }
         
-        [[UIColor blackColor] setStroke];
+        [self.pathColor setStroke];
         segmentPath.lineWidth = 4;
         [segmentPath stroke];
     }
@@ -53,7 +54,7 @@
                     [segmentPath addLineToPoint:points];
                 }
                 
-                [[UIColor blackColor] setStroke];
+                [self.pathColor setStroke];
                 segmentPath.lineWidth = 4;
                 [segmentPath stroke];
             }

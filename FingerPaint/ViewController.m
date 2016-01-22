@@ -36,21 +36,9 @@
         [self.paintView setNeedsDisplay];
     }
 }
+- (IBAction)colorSlider:(UISlider *)sender {
+    self.paintView.pathColor = [UIColor colorWithHue:sender.value saturation:1.0 brightness:1.0 alpha:1.0];
+    NSLog(@"value %f", sender.value);
+}
 
 @end
-
-
-//    CGPoint startLocation = [sender locationOfTouch:1 inView:self.view];
-////    CGFloat startX = startLocation.x;
-////    CGFloat startY = startLocation.y;
-////
-////    CGFloat locationX = currentLocation.x;
-////    CGFloat locationY = currentLocation.y;
-////
-////    self.paintView.startX = startX;
-////    self.paintView.startX = startY;
-////
-////    self.paintView.fingerPathX = locationX;
-////    self.paintView.fingerPathY = locationY;
-//    self.paintView.startPosition = startLocation;
-//    self.paintView.fingerPosition = currentLocation;
