@@ -24,6 +24,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Hf2-qY-KbE" appends="YES" id="pHd-bc-HV7"/>
+                                    <outletCollection property="gestureRecognizers" destination="FFy-0C-td6" appends="YES" id="vLf-82-lqN"/>
                                 </connections>
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cpo-Ne-cEn">
@@ -64,6 +65,9 @@
                                 <state key="normal" title="Eraser">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="eraserButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VlM-65-5fx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4u5-hn-5eQ">
                                 <rect key="frame" x="186" y="10" width="57" height="30"/>
@@ -75,6 +79,9 @@
                                 <state key="normal" title="Text">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="textButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0sQ-0S-Gvx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -102,6 +109,7 @@
                     <connections>
                         <outlet property="colorView" destination="cca-rd-ebm" id="TuZ-m9-g6F"/>
                         <outlet property="paintView" destination="20g-V9-mnX" id="Gd5-xM-sG1"/>
+                        <outlet property="textButton" destination="4u5-hn-5eQ" id="RzT-kH-hGE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -110,6 +118,11 @@
                         <action selector="paintGesture:" destination="BYZ-38-t0r" id="tug-h4-IdY"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="FFy-0C-td6">
+                    <connections>
+                        <action selector="textLocation:" destination="BYZ-38-t0r" id="Btv-b9-wPO"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="162" y="368"/>
         </scene>

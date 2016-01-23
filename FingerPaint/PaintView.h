@@ -19,6 +19,7 @@ IB_DESIGNABLE
 @property (nonatomic, strong) IBInspectable UIColor *pathColor;
 @property (nonatomic,strong) NSMutableArray *colorsArray;
 @property (nonatomic, strong) Line *line;
+@property (nonatomic, assign) BOOL isTextOn;
 
 
 -(void)addPositions:(CGPoint)position;

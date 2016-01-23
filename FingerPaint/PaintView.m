@@ -17,15 +17,15 @@
         _fingerPath = [[NSMutableArray alloc] init];
         _arrayOfPaths = [[NSMutableArray alloc]init];
         _colorsArray = [[NSMutableArray alloc] init];
-//        _line = [[Line alloc]init];
         _pathColor = [[UIColor alloc]init];
+        _isTextOn = NO;
     }
     return self;
 }
 
 - (void)drawRect:(CGRect)rect {
 //    NSLog(@"finger position: %@", NSStringFromCGPoint(self.fingerPosition));
-    
+
     // Redrawing old lines
     if (self.arrayOfPaths.count > 0) {
         for (Line *lines in self.arrayOfPaths) {
