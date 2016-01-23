@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Line.h"
 
 IB_DESIGNABLE
 
@@ -16,6 +17,8 @@ IB_DESIGNABLE
 @property (nonatomic,strong) NSMutableArray *fingerPath;
 @property (nonatomic, strong) NSMutableArray *arrayOfPaths;
 @property (nonatomic, strong) IBInspectable UIColor *pathColor;
+@property (nonatomic,strong) NSMutableArray *colorsArray;
+
 
 -(void)addPositions:(CGPoint)position;
 -(void)storeArrays;

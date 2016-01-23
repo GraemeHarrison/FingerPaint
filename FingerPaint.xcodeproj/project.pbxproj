@@ -16,6 +16,7 @@
 		2E4DDAA71C52A3CA00F94917 /* FingerPaintTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4DDAA61C52A3CA00F94917 /* FingerPaintTests.m */; };
 		2E4DDAB21C52A3CA00F94917 /* FingerPaintUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4DDAB11C52A3CA00F94917 /* FingerPaintUITests.m */; };
 		2E4DDAC11C52A6CE00F94917 /* PaintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4DDAC01C52A6CE00F94917 /* PaintView.m */; };
+		2E4DDAC41C53005B00F94917 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4DDAC31C53005B00F94917 /* Line.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		2E4DDAB31C52A3CA00F94917 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E4DDABF1C52A6CE00F94917 /* PaintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaintView.h; sourceTree = "<group>"; };
 		2E4DDAC01C52A6CE00F94917 /* PaintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaintView.m; sourceTree = "<group>"; };
+		2E4DDAC21C53005B00F94917 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		2E4DDAC31C53005B00F94917 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				2E4DDA931C52A3CA00F94917 /* ViewController.m */,
 				2E4DDABF1C52A6CE00F94917 /* PaintView.h */,
 				2E4DDAC01C52A6CE00F94917 /* PaintView.m */,
+				2E4DDAC21C53005B00F94917 /* Line.h */,
+				2E4DDAC31C53005B00F94917 /* Line.m */,
 				2E4DDA951C52A3CA00F94917 /* Main.storyboard */,
 				2E4DDA981C52A3CA00F94917 /* Assets.xcassets */,
 				2E4DDA9A1C52A3CA00F94917 /* LaunchScreen.storyboard */,
@@ -275,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E4DDAC41C53005B00F94917 /* Line.m in Sources */,
 				2E4DDA941C52A3CA00F94917 /* ViewController.m in Sources */,
 				2E4DDAC11C52A6CE00F94917 /* PaintView.m in Sources */,
 				2E4DDA911C52A3CA00F94917 /* AppDelegate.m in Sources */,
@@ -502,6 +508,7 @@
 				2E4DDAB81C52A3CA00F94917 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2E4DDAB91C52A3CA00F94917 /* Build configuration list for PBXNativeTarget "FingerPaintTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +517,7 @@
 				2E4DDABB1C52A3CA00F94917 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2E4DDABC1C52A3CA00F94917 /* Build configuration list for PBXNativeTarget "FingerPaintUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +526,7 @@
 				2E4DDABE1C52A3CA00F94917 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

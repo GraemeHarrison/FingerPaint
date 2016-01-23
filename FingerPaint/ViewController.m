@@ -11,6 +11,7 @@
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet PaintView *paintView;
+@property (strong, nonatomic) IBOutlet UIView *colorView;
 
 @end
 
@@ -19,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.paintView.pathColor = [UIColor colorWithHue:0.5 saturation:1.0 brightness:1.0 alpha:1.0];
+    self.colorView.backgroundColor = self.paintView.pathColor;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,7 +41,8 @@
 }
 - (IBAction)colorSlider:(UISlider *)sender {
     self.paintView.pathColor = [UIColor colorWithHue:sender.value saturation:1.0 brightness:1.0 alpha:1.0];
-    NSLog(@"value %f", sender.value);
+    self.colorView.backgroundColor = [UIColor colorWithHue:sender.value saturation:1.0 brightness:1.0 alpha:1.0];
+//    NSLog(@"value %f", sender.value);
 }
 
 @end
