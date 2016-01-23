@@ -11,7 +11,7 @@
 
 @interface Line : NSObject
 
-@property (nonatomic, strong) UIColor *pathColor;
-@property (nonatomic, strong) NSArray *lines;
+@property (nonatomic, strong) UIColor *color;
+@property (nonatomic, strong) NSMutableArray *linesArray; //array of points for each line
 
 @end

@@ -18,6 +18,7 @@ IB_DESIGNABLE
 @property (nonatomic, strong) NSMutableArray *arrayOfPaths;
 @property (nonatomic, strong) IBInspectable UIColor *pathColor;
 @property (nonatomic,strong) NSMutableArray *colorsArray;
+@property (nonatomic, strong) Line *line;
 
 
 -(void)addPositions:(CGPoint)position;

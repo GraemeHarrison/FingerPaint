@@ -17,7 +17,8 @@
         _fingerPath = [[NSMutableArray alloc] init];
         _arrayOfPaths = [[NSMutableArray alloc]init];
         _colorsArray = [[NSMutableArray alloc] init];
-//        _pathColor = [UIColor blackColor];
+//        _line = [[Line alloc]init];
+        _pathColor = [[UIColor alloc]init];
     }
     return self;
 }
@@ -25,47 +26,42 @@
 - (void)drawRect:(CGRect)rect {
 //    NSLog(@"finger position: %@", NSStringFromCGPoint(self.fingerPosition));
     
+    // Redrawing old lines
+    if (self.arrayOfPaths.count > 0) {
+        for (Line *lines in self.arrayOfPaths) {
+            UIBezierPath *oldPath = [[UIBezierPath alloc] init];
+            
+            if (lines.linesArray.count > 0) {
+                
+                for (NSArray *points in lines.linesArray) {
+                    CGPoint prevPoint = [[points objectAtIndex:0] CGPointValue];
+                    [oldPath moveToPoint:prevPoint];
+                    
+                    for (NSValue *val in points) {
+                        CGPoint points = [val CGPointValue];
+                        [oldPath addLineToPoint:points];
+                    }
+                }
+                [lines.color setStroke];
+                oldPath.lineWidth = 4;
+                [oldPath stroke];
+            }
+        }
+    }
+    
     // Most recent line
-    UIBezierPath *segmentPath = [[UIBezierPath alloc] init];
+    UIBezierPath *newPath = [[UIBezierPath alloc] init];
     if (self.fingerPath.count > 0) {
         CGPoint prevPoint = [[self.fingerPath objectAtIndex:0] CGPointValue];
-        [segmentPath moveToPoint:prevPoint];
+        [newPath moveToPoint:prevPoint];
         
         for (NSValue *val in self.fingerPath) {
             CGPoint points = [val CGPointValue];
-            [segmentPath addLineToPoint:points];
+            [newPath addLineToPoint:points];
         }
-      
         [self.pathColor setStroke];
-        segmentPath.lineWidth = 4;
-        [segmentPath stroke];
-    }
-    
-    // Redrawing old lines
-    if (self.arrayOfPaths.count > 0) {
-        
-        // Setting colors of previously drawn lines
-        if (self.colorsArray.count > 0) {
-            for (int i=0; i < self.arrayOfPaths.count; i++) {
-                [[self.colorsArray objectAtIndex:i] setStroke];
-            }
-        }
-        
-        UIBezierPath *segmentPath = [[UIBezierPath alloc] init];
-        for (NSArray *pathArray in self.arrayOfPaths) {
-            if (pathArray.count > 0) {
-                CGPoint prevPoint = [[pathArray objectAtIndex:0] CGPointValue];
-                [segmentPath moveToPoint:prevPoint];
-                
-                for (NSValue *val in pathArray) {
-                    CGPoint points = [val CGPointValue];
-                    [segmentPath addLineToPoint:points];
-                }
-               
-                segmentPath.lineWidth = 4;
-                [segmentPath stroke];
-            }
-        }
+        newPath.lineWidth = 4;
+        [newPath stroke];
     }
 }
 
@@ -74,8 +70,24 @@
 }
 
 -(void)storeArrays {
-    [self.arrayOfPaths addObject:[self.fingerPath mutableCopy]];
-    [self.colorsArray addObject:self.pathColor];
+    Line *line = [[Line alloc] init];
+    line.color = self.pathColor;
+    [line.linesArray addObject:[self.fingerPath mutableCopy]];
+    [self.arrayOfPaths addObject:line];
 }
 
 @end
+
+
+
+//    [self.colorsArray addObject:newLine.color];
+//    [self.arrayOfPaths addObject:[self.fingerPath mutableCopy]];
+//    [self.colorsArray addObject:self.pathColor];
+
+
+//        // Setting colors of previously drawn lines
+//        if (self.colorsArray.count > 0) {
+//            for (int i=0; i < self.arrayOfPaths.count; i++) {
+//                [[self.colorsArray objectAtIndex:i] setStroke];
+//            }
+//        }

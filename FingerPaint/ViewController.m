@@ -36,8 +36,9 @@
     } else {
         CGPoint currentLocation = [sender locationInView:self.view];
         [self.paintView addPositions:currentLocation];
-        [self.paintView setNeedsDisplay];
     }
+    [self.paintView setNeedsDisplay];
+
 }
 - (IBAction)colorSlider:(UISlider *)sender {
     self.paintView.pathColor = [UIColor colorWithHue:sender.value saturation:1.0 brightness:1.0 alpha:1.0];

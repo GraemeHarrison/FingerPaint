@@ -10,4 +10,14 @@
 
 @implementation Line
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _linesArray = [[NSMutableArray alloc]init];
+        _color = [[UIColor alloc]init];
+    }
+    return self;
+}
+
 @end
