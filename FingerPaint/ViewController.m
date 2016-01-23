@@ -45,5 +45,9 @@
     self.colorView.backgroundColor = [UIColor colorWithHue:sender.value saturation:1.0 brightness:1.0 alpha:1.0];
 //    NSLog(@"value %f", sender.value);
 }
+- (IBAction)clearButton:(UIButton *)sender {
+    [self.paintView.arrayOfPaths removeAllObjects];
+    [self.paintView setNeedsDisplay];
+}
 
 @end
